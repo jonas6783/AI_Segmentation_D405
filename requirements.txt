@@ -1,0 +1,6 @@
+open3d>=0.17.0
+numpy<2.0.0
+opencv-python
+pyrealsense2
+rembg
+onnxruntime  
