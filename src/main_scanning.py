@@ -1,8 +1,8 @@
 # main.py
 import config
 from turntable import Turntable
-from camera1 import RealSenseCamera
-from processor2 import PointCloudProcessor
+from camera import RealSenseCamera
+from processor import PointCloudProcessor
 from calibration import Calibrator
 import numpy as np
 
@@ -57,3 +57,4 @@ print("Scan Vorgang Abgeschlossen")
 
 if __name__ == "__main__":
     main()
+
