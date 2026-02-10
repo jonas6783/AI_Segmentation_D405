@@ -1,1 +1,22 @@
+# --- Python Artefakte ---
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+venv/
+.venv/
 
+# --- Lokale Scan-Daten ---
+# Ignoriert den Output-Ordner für die Roh-Scans (definiert in config.py)
+scan_clean_pipeline/
+
+# --- Automatisch generierte Berichte ---
+# Diese Dateien werden bei jedem Lauf in inspection.py neu erstellt
+inspection_report.csv
+inspection_rework_points.csv
+
+# --- System & IDE ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
