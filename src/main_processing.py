@@ -7,7 +7,7 @@ from inspection import inspect
 # =================================================
 # DATEIEN
 # =================================================
-CAD_FILE = r"Cad/kopfstueck (1).ply"
+CAD_FILE = r"CAD/kopfstueck.ply"
 such_ordner = "scan_clean_pipeline"
 
 # Scans suchen
@@ -100,5 +100,6 @@ def main():
 # =================================================
 if __name__ == "__main__":
     main()
+
 
 
