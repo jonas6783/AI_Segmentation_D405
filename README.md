@@ -476,7 +476,7 @@ Das System verwendet ein **zweistufiges Registrierungsverfahren**:
 Dieses Projekt entstand im Rahmen des Kurses **„KI-Anwendungen im betrieblichen Umfeld"** an der **Hochschule Niederrhein** (Wintersemester 2025/26).
 
 ```bibtex
-@misc{kennerknecht2026qualitaetspruefung,
+@misc{ki_projekt_2026,
   title     = {Entwicklung eines automatisierten 360°-Prüfstands zur optischen Qualitätskontrolle 
                mittels Intel RealSense D405 und CAD-basiertem Soll-Ist-Abgleich},
   author    = {Kennerknecht, Lukas and Damek, Jonas},
