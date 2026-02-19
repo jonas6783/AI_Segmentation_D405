@@ -1,4 +1,4 @@
-# 🔍 Automatisierter 360°-Prüfstand zur optischen Qualitätskontrolle
+#  Automatisierter 360°-Prüfstand zur optischen Qualitätskontrolle
 
 > **Entwicklung eines automatisierten 360°-Prüfstands zur optischen Qualitätskontrolle mittels Intel RealSense D405 und CAD-basiertem Soll-Ist-Abgleich**
 
@@ -13,7 +13,7 @@
 
 ---
 
-## 📋 Inhaltsverzeichnis
+## Inhaltsverzeichnis
 
 - [Projektbeschreibung](#-projektbeschreibung)
 - [Systemvoraussetzungen](#-systemvoraussetzungen)
@@ -30,7 +30,7 @@
 
 ---
 
-## 🎯 Projektbeschreibung
+##  Projektbeschreibung
 
 Dieses Projekt realisiert einen vollautomatisierten Prototyp für eine **3D-Prüfstation** zur optischen Qualitätskontrolle von Gussbauteilen. Das System erfasst ein Bauteil mittels einer **Intel RealSense D405** Tiefenkamera und einem computergesteuerten Drehteller vollständig in 360° und vergleicht die gewonnene Punktwolke automatisiert mit einem **CAD-Soll-Modell**.
 
@@ -47,7 +47,7 @@ Dieses Projekt realisiert einen vollautomatisierten Prototyp für eine **3D-Prü
 
 ---
 
-## 💻 Systemvoraussetzungen
+##  Systemvoraussetzungen
 
 ### Software
 | Komponente | Mindestversion |
@@ -65,7 +65,7 @@ Dieses Projekt realisiert einen vollautomatisierten Prototyp für eine **3D-Prü
 
 ---
 
-## 🔧 Hardware-Setup
+##  Hardware-Setup
 
 ```
          ┌─────────────────────────────────────┐
@@ -100,7 +100,7 @@ Dieses Projekt realisiert einen vollautomatisierten Prototyp für eine **3D-Prü
 
 ---
 
-## 🚀 Installation
+##  Installation
 
 ### 1. Repository klonen
 ```bash
@@ -142,7 +142,7 @@ python -c "from rembg import remove; print('rembg OK')"
 
 ---
 
-## ⚙️ Konfiguration
+##  Konfiguration
 
 Alle Systemparameter werden **zentral** in `config.py` und `tolerances.json` verwaltet. Der Quellcode muss für Anpassungen **nicht** geändert werden.
 
@@ -194,7 +194,7 @@ OUTPUT_FOLDER = "scan_clean_pipeline"
 
 ---
 
-## 📖 Verwendung
+##  Verwendung
 
 Das System ist in **zwei unabhängige Phasen** aufgeteilt:
 
@@ -282,14 +282,14 @@ FERTIG
 
 ---
 
-## 📁 Projektstruktur
+##  Projektstruktur
 
 ```
 AI_Segmentation_D405/
 │
 ├── src/                              # Gesamte Programm-Logik
-│   ├── main_scanning.py              # 🚀 Phase 1: Scan-Orchestrator
-│   ├── main_processing.py            # 🚀 Phase 2: QS-Pipeline
+│   ├── main_scanning.py              #  Phase 1: Scan-Orchestrator
+│   ├── main_processing.py            #  Phase 2: QS-Pipeline
 │   ├── camera.py                     # Intel RealSense D405 Klasse
 │   ├── turntable.py                  # Drehteller-Steuerung (G-Code)
 │   ├── calibration.py                # ArUco-Marker Kalibrierung
@@ -300,16 +300,16 @@ AI_Segmentation_D405/
 ├── CAD/
 │   └── kopfstueck.ply                # Referenz-CAD-Modell (Soll-Geometrie)
 │
-├── scan_clean_pipeline/              # 📂 Generiert nach Phase 1
+├── scan_clean_pipeline/              #  Generiert nach Phase 1
 │   ├── scan_000.ply                  # Scan bei 0°
 │   ├── scan_020.ply                  # Scan bei 20°
 │   └── ...                           # bis scan_340.ply
 │
-├── inspection_report.csv             # 📊 Generiert nach Phase 2
-├── inspection_rework_points.csv      # 🤖 Rework-Koordinaten für Roboter
+├── inspection_report.csv             #  Generiert nach Phase 2
+├── inspection_rework_points.csv      #  Rework-Koordinaten für Roboter
 │
-├── config.py                         # ⚙️ Globale Systemparameter
-├── tolerances.json                   # ⚙️ Zonenbasierte Toleranzwerte
+├── config.py                         #  Globale Systemparameter
+├── tolerances.json                   #  Zonenbasierte Toleranzwerte
 ├── requirements.txt                  # Python-Abhängigkeiten
 ├── .gitignore                        # Git-Ausschlüsse
 └── README.md                         # Diese Datei
@@ -317,7 +317,7 @@ AI_Segmentation_D405/
 
 ---
 
-## ⚙️ Funktionsweise
+##  Funktionsweise
 
 ### Gesamtablauf
 
@@ -366,15 +366,15 @@ AI_Segmentation_D405/
 │    └── CSV-Report-Generierung                                    │
 │         │                                                        │
 │         ▼                                                        │
-│    📊 inspection_report.csv                                      │
-│    🤖 inspection_rework_points.csv                               │
-│    🖥️  Open3D 3D-Visualisierung                                  │
+│       inspection_report.csv                                      │
+│       inspection_rework_points.csv                               │
+│        Open3D 3D-Visualisierung                                  │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 🗺️ Qualitätszonen & Toleranzen
+##  Qualitätszonen & Toleranzen
 
 Das System prüft das Bauteil zonenspezifisch mit individuellen Toleranzwerten:
 
@@ -390,7 +390,7 @@ Das System prüft das Bauteil zonenspezifisch mit individuellen Toleranzwerten:
 
 ---
 
-## 📊 Ausgabe & Reports
+##  Ausgabe & Reports
 
 ### `inspection_report.csv` – QS-Prüfbericht
 
@@ -416,7 +416,7 @@ scan_000,ANGUSS_A,12.601,-8.189,34.087,1.489
 
 ---
 
-## 🐛 Bekannte Limitationen
+##  Bekannte Limitationen
 
 ### 1. Reflexionen auf metallischen Oberflächen
 Die Intel RealSense D405 nutzt Infrarot-Stereo-Projektion. Stark glänzende oder spiegelnde Oberflächen können zu Lücken oder Rauschen in der Tiefenkarte führen, was zu False-Positive-Fehlern führen kann.
@@ -431,7 +431,7 @@ Die Pose-Estimation aus dem 2D-Bild unterliegt Beleuchtungsschwankungen (Jitter)
 
 ---
 
-## 📦 Abhängigkeiten
+##  Abhängigkeiten
 
 ```
 pyrealsense2     # Intel RealSense SDK
@@ -446,7 +446,7 @@ Vollständige Liste: siehe `requirements.txt`
 
 ---
 
-## 🔬 Technische Details
+##  Technische Details
 
 ### Alignment-Algorithmus
 
@@ -471,7 +471,7 @@ Das System verwendet ein **zweistufiges Registrierungsverfahren**:
 
 ---
 
-## 🎓 Kontext & Zitation
+##  Kontext & Zitation
 
 Dieses Projekt entstand im Rahmen des Kurses **„KI-Anwendungen im betrieblichen Umfeld"** an der **Hochschule Niederrhein** (Wintersemester 2025/26).
 
@@ -489,7 +489,7 @@ Dieses Projekt entstand im Rahmen des Kurses **„KI-Anwendungen im betriebliche
 
 ---
 
-## 📜 Lizenz
+##  Lizenz
 
 Dieses Projekt ist unter der [MIT-Lizenz](LICENSE) veröffentlicht.
 
